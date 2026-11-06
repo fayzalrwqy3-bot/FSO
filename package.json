@@ -1,0 +1,21 @@
+{
+  "name": "shoof-sub",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Shoof Live Stremio addon for Vercel and VPS",
+  "main": "server.js",
+  "engines": {
+    "node": ">=22.14"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "check": "node --check api/index.js && node --check server.js && node --check lib/source.js && node --check lib/proxy.js && node --check lib/categories.js && node --check lib/images.js && node --check lib/edition.js && node --check lib/metadata.js",
+    "test": "node --test",
+    "probe": "node --env-file-if-exists=.env scripts/probe.js"
+  },
+  "dependencies": {
+    "axios": "^1.12.2",
+    "cheerio": "^1.1.2",
+    "sharp": "^0.35.5"
+  }
+}
